@@ -1,34 +1,34 @@
-variable "aws_region" {
+variable "AWS_REGION" {
   description = "AWS region"
   type        = string
 }
 
-variable "aws_access_key_id" {
+variable "AWS_ACCESS_KEY_ID" {
   description = "AWS Access Key ID"
   type        = string
 }
 
-variable "aws_secret_access_key" {
+variable "AWS_SECRET_ACCESS_KEY" {
   description = "AWS Secret Access Key"
   type        = string
 }
 
-variable "aws_session_token" {
+variable "AWS_SESSION_TOKEN" {
   description = "AWS Session Token"
   type        = string
 }
 
-variable "postgres_db_name" {
+variable "POSTGRES_DB_NAME" {
   description = "PostgreSQL name"
   type        = string
 }
 
-variable "postgres_db_username" {
+variable "POSTGRES_DB_USERNAME" {
   description = "PostgreSQL username"
   type        = string
 }
 
-variable "postgres_db_password" {
+variable "POSTGRES_DB_PASSWORD" {
   description = "PostgreSQL password"
   type        = string
 }

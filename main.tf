@@ -10,10 +10,10 @@ terraform {
 
 
 provider "aws" {
-  region     = var.aws_region
-  access_key = var.aws_access_key_id
-  secret_key = var.aws_secret_access_key
-  token      = var.aws_session_token
+  region     = var.AWS_REGION
+  access_key = var.AWS_ACCESS_KEY_ID
+  secret_key = var.AWS_SECRET_ACCESS_KEY
+  token      = var.AWS_SESSION_TOKEN
 }
 
 resource "aws_db_instance" "postgresql" {
@@ -21,9 +21,9 @@ resource "aws_db_instance" "postgresql" {
   engine               = "postgres"               # Database engine
   engine_version       = "16.4"                   # PostgreSQL version
   instance_class       = "db.t3.micro"            # Instance type
-  db_name              = var.postgres_db_name     # Database name
-  username             = var.postgres_db_username # Master username
-  password             = var.postgres_db_password # Master password
+  db_name              = var.POSTGRES_DB_NAME     # Database name
+  username             = var.POSTGRES_DB_USERNAME # Master username
+  password             = var.POSTGRES_DB_PASSWORD # Master password
   parameter_group_name = "default.postgres16"     # Parameter group
   publicly_accessible  = true                     # Make the DB accessible from the public internet
   skip_final_snapshot  = true                     # Skip snapshot on deletion

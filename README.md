@@ -3,6 +3,15 @@
 Este repositório tem como finalidade criar a infraestrutura de um banco de dados postgresql na AWS. Logo há uma necessidade de criar uma conta na AWS, acessar suas variáveis de acesso para substituir em cada variável correspondente.
 Também há uma necessidade de instalar o Terraform
 
+## Design do banco de dados:
+
+![alt text](https://github.com/FIAP-POS-TECH-7SOAT/lanchonete-fiap-postgres-infra-terraform/blob/main/diagrama_db.png?raw=true)
+
+## Motivo da escolha do banco relacional:
+
+Acreditando que nosso sistema não precisará ter mais grandes adequações/modelagem, o banco relacional se torna a melhor escolha já que ele já está sendo utilizado e não há uma necessidade de realizar mais grandes adaptações.
+Outro motivo muito positivo para a escolha, é que há uma possibilidade maior de encontrar membros que já possui familiaridade com ele, assim podem ter mais condições de manutenção.
+
 ## Comandos para execução do Terraform
 
 Após ter feito todos os passos acima, execute os comandos abaixo
@@ -38,6 +47,8 @@ terraform apply
 ```
 
 ## Exemplo do arquivo env.tfvars
+
+Existe um arquivo como exemplo para o env.tfvars
 
 aws_access_key_id = ""
 aws_secret_access_key = ""
