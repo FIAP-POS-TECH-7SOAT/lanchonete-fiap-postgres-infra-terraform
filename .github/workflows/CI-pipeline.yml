@@ -42,5 +42,4 @@ jobs:
                            -var="AWS_SESSION_TOKEN=${AWS_SESSION_TOKEN}" \
                            -var="POSTGRES_DB_NAME=${POSTGRES_DB_NAME}" \
                            -var="POSTGRES_DB_USERNAME=${POSTGRES_DB_USERNAME}" \
-                           -var="POSTGRES_DB_PASSWORD=${POSTGRES_DB_PASSWORD}" \
-                           -auto-approve
+                           -var="POSTGRES_DB_PASSWORD=${POSTGRES_DB_PASSWORD}"
