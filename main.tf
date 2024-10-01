@@ -16,6 +16,36 @@ provider "aws" {
   token      = var.AWS_SESSION_TOKEN
 }
 
+resource "aws_security_group" "postgresql_sg" {
+  name        = "postgresql_sg"
+  description = "Allow all TCP traffic for PostgreSQL"
+
+  ingress {
+    description = "Allow all TCP IPv4"
+    from_port   = 0
+    to_port     = 65535
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    description = "Allow all TCP IPv6"
+    from_port   = 0
+    to_port     = 65535
+    protocol    = "tcp"
+    ipv6_cidr_blocks = ["::/0"]
+  }
+
+  egress {
+    description = "Allow all outbound traffic"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+    ipv6_cidr_blocks = ["::/0"]
+  }
+}
+
 resource "aws_db_instance" "postgresql" {
   allocated_storage    = 10                       # Storage size in GB
   engine               = "postgres"               # Database engine
@@ -28,4 +58,6 @@ resource "aws_db_instance" "postgresql" {
   publicly_accessible  = true                     # Make the DB accessible from the public internet
   skip_final_snapshot  = true                     # Skip snapshot on deletion
   storage_type         = "gp2"                    # General Purpose SSD (gp2)
+
+  vpc_security_group_ids = [aws_security_group.postgresql_sg.id]
 }
