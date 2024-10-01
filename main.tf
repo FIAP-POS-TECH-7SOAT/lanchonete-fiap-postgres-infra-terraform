@@ -17,7 +17,7 @@ provider "aws" {
 }
 
 resource "aws_security_group" "postgresql_sg" {
-  name        = "postgresql_sg"
+  name        = "postgresql_sg_prod"
   description = "Allow all TCP traffic for PostgreSQL"
 
   ingress {
