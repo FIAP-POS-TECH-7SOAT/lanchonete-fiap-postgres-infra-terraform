@@ -36,7 +36,7 @@ jobs:
           POSTGRES_DB_USERNAME: ${{ secrets.POSTGRES_DB_USERNAME }}
           POSTGRES_DB_PASSWORD: ${{ secrets.POSTGRES_DB_PASSWORD }}
         run: |
-          terraform plan -var="AWS_REGION=${AWS_REGION}" \
+          terraform plan   -var="AWS_REGION=${AWS_REGION}" \
                            -var="AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}" \
                            -var="AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}" \
                            -var="AWS_SESSION_TOKEN=${AWS_SESSION_TOKEN}" \
